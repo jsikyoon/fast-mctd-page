@@ -17,15 +17,15 @@
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:image" content="static/images/your_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>Fast-MCTD</title>
+  <link rel="icon" type="image/x-icon" href="static/images/mctd.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +43,18 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+  </script>
 </head>
 <body>
 
@@ -52,93 +64,107 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Fast Monte Carlo Tree Diffusion: 100x Speedup via Parallel Sparse Planning</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="https://jaesikyoon.com" target="_blank">Jaesik Yoon</a><sup>*,1,2</sup>,
+              </span>
+              <span class="author-block">
+                Hyeonseo Cho<sup>*,1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://yoshuabengio.org" target="_blank">Yoshua Bengio</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://mlml.kaist.ac.kr/sungjinahn" target="_blank">Sungjin Ahn</a><sup>1,4</sup>
+              </span>
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>KAIST, <sup>2</sup>SAP, <sup>3</sup>Mila, <sup>4</sup>NYU
+                  <br><sup>*</sup>Equal contribution
+                  <br>Preprint
+                </span>
+              </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2506.09498" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
+                    <span>Paper</span>
                     </a>
                   </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
+                <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://github.com/ahn-ml/mctd" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fab fa-github"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Code</span>
                 </a>
               </span>
-            </div>
-          </div>
+
+              <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2506.09498" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://wandb.ai/jaesikyoon/jaesik_mctd" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="static/images/wandb.svg" alt="wandb" style="height: 1.2em; vertical-align: middle;">
+                </span>
+                <span>wandb log</span>
+              </a>
+            </span>
+            <!-- Arxiv PDF link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2502.07202" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>MCTD Paper</span>
+              </a>
+            </span>
+
+
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser image-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+      <div class="banner-videos" style="display: flex; gap: 16px; justify-content: center; align-items: center;">
+        <img src="static/images/PlanningTime_vs_SuccessRate.png" alt="Key Result" style="max-width: 100%; height: auto;">
+      </div>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Monte Carlo Tree Diffusion (MCTD) shows promising results in the complex planning tasks, while it is inherently slow due to the sequential search process and computationally intensive denoising process. We address this through the parallel tree search and sparse planning. It achieves over 100x speedup for long-horizon tasks.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser image -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +174,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Diffusion models have recently emerged as a powerful approach for trajectory planning. However, their inherently non-sequential nature limits their effectiveness in long-horizon reasoning tasks at test time. The recently proposed Monte Carlo Tree Diffusion (MCTD) offers a promising solution by combining diffusion with tree-based search, achieving state-of-the-art performance on complex planning problems. Despite its strengths, our analysis shows that MCTD incurs substantial computational overhead due to the sequential nature of tree search and the cost of iterative denoising. To address this, we propose Fast-MCTD, a more efficient variant that preserves the strengths of MCTD while significantly improving its speed and scalability. Fast-MCTD integrates two techniques: Parallel MCTD, which enables parallel rollouts via delayed tree updates and redundancy-aware selection; and Sparse MCTD, which reduces rollout length through trajectory coarsening. Experiments show that Fast-MCTD achieves up to 100× speedup over standard MCTD while maintaining or improving planning performance. Remarkably, it even outperforms Diffuser in inference speed on some tasks, despite Diffuser requiring no search and yielding weaker solutions. These results position Fast-MCTD as a practical and scalable solution for diffusion-based inference-time reasoning.
           </p>
         </div>
       </div>
@@ -157,128 +183,201 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+<!-- planning horizon dilemma -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Planning Horizon Dilemma</h2>
+        <div class="content has-text-justified">
+          <p>
+            MCTD shows promising results in complex planning tasks by combining tree-structured search (Monte Carlo Tree Search) with diffusion denoising. However, it suffers from inherent computational inefficiency due to the intensive nature of both components.
+            The computational bottlenecks arise from two sources: MCTS fundamentally requires sequential statistics updates after each rollout, preventing parallelization, while the diffusion model demands iterative execution of expensive denoising steps at each node.
+            This overhead becomes particularly problematic in long-horizon tasks—precisely where MCTD excels. As planning horizon increases, MCTD must navigate exponentially expanding search space, leading to prohibitive computational costs.
+            Consider an MCTD tree where each parent has $N_{\text{child}}$ children and $C_{\text{sub}}$ represents the denoising cost per node. For required task depth $\bar{s}$, the total search complexity is:
+            $$
+            C_{\text{MCTD}} = O(N_{\text{child}}^{\bar{s}} \cdot C_{\text{sub}}).
+            $$
+            While MCTD's exploration-exploitation balancing reduces actual complexity below this bound, the algorithm remains exponential in planning horizon. This creates the <strong>Planning Horizon Dilemma</strong>: MCTD becomes increasingly inefficient precisely where it is most effective—long-horizon planning tasks requiring extensive search depth.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End planning horizon dilemma -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+<!-- Fast-MCTD -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Fast-MCTD: Fast Monte Carlo Tree Diffusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we addressed the efficiency issue of MCTD in the two aspects: <strong>Between-rollout inefficiency</strong> and <strong>Within-rollout inefficiency</strong>.
+            The inefficiency between rollout is from the sequential statistics updates of MCTS, limiting parallelism, we addressed this by re-designing the MCTD tree search to be parallelizable with Parallel MCTD (P-MCTD).
+            The inefficiency within rollout is from the iterative denoising process of diffusion model, which is computationally intensive. To optimize the within-rollout inefficiency, we proposed the higher-level planning, Sparse MCTD (S-MCTD).
+            <br>
+            <br>
+          </p>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
+        <h3 class="title is-4">Parallel MCTD</h3>
+        <div class="content has-text-justified">
+          <p>
+            <div style="text-align: center;">
+              <img src="static/images/pmctd_overview.png" alt="PMCTD Overview" style="width: 90%; height: auto;">
+            </div>
+            <br>
+            To design a parallelized version of MCTD, we apply three techniques: Delayed Tree Update, Redundancy-Aware Selection, and Parallel Denoising on Expansion and Simulation.
+            <strong>Delayed Tree Update</strong> postpones tree updates until $K$ rollouts complete, enabling parallel processing of multiple rollouts. While this causes inefficiency from operating on outdated tree statistics, we empirically find this overhead negligible compared to denoising costs. However, delayed updates alone are insufficient for efficient parallelization due to potential duplicate rollouts.
+            <strong>Redundancy-Aware Selection</strong> addresses duplicate rollouts by redesigning the node selection policy to account for concurrent rollouts, inspired by <a href="https://arxiv.org/abs/1810.11755" target="_blank" style="color: #00A1D6; text-decoration: none;">Liu et al., 2018</a> and <a href="https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf" target="_blank" style="color: #00A1D6; text-decoration: none;">Chaslot et al., 2008</a>:
+            $$
+              \pi(i) = \arg\max_{j\in\mathcal{C}(i)}\left(V_j + \beta \sqrt{ \frac{\log (N_i + \hat{N}_i \cdot w)}{N_j + \hat{N}_j \cdot w}}\right),
+            $$
+            where $\pi(i)$ denotes the node selection policy from node $i$, $\mathcal{C}(i)$ is the child node set, and $V_{i}$, $N_{i}$ represent estimated value and visitation count respectively. The hyperparameter $w$ balances exploration-exploitation for parallel search: $w=0$ reduces to standard MCTD selection, while higher values penalize already-selected nodes in the current batch, encouraging exploration of different tree regions.
+            Additionally, we designed to process the selection sequentially to reduce the possibility of the duplicate rollout.
+            <strong>Parallel Denoising on Expansion and Simulation</strong> optimizes computational overhead. Unlike standard MCTS, MCTD incurs substantial expansion overhead due to denoising processes. We parallelize denoising by batching rollouts—since subplan lengths vary across rollouts, subplans are zero-padded and packed into single batches, enabling high-throughput parallel GPU execution. The table below shows operation times for each MCTD step on PointMaze Giant tasks.
+            <div style="width: 100%; display: flex; justify-content: center; margin: 1em 0;">
+              <table style="border-collapse: collapse; min-width: 320px; max-width: 400px; font-size: 1.1em;">
+                <thead>
+                  <tr>
+                    <th style="border-bottom: 2px solid #222; border-top: 2px solid #222; text-align: left; padding: 6px 12px;">MCTD Step</th>
+                    <th style="border-bottom: 2px solid #222; border-top: 2px solid #222; text-align: left; padding: 6px 12px;">Time (sec.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Selection</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">3e-4 (0.05%)</td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Expansion</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;"><strong>0.393 (70.9%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Simulation</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;"><strong>0.161 (29.0%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 2px solid #222; padding: 6px 12px;">Backpropagation</td>
+                    <td style="border-bottom: 2px solid #222; padding: 6px 12px;">1e-4 (0.02%)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </p>
+          <br>
+          <br>
         </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+        <h3 class="title is-4">Sparse MCTD</h3>
+        <div class="content has-text-justified">
+          <p>
+            <div style="text-align: center;">
+              <img src="static/images/smctd_overview.png" alt="Sparse MCTD Overview" style="width: 90%; height: auto;">
+            </div>
+            <br>
+            Through the parallelization of the tree search, we can optimize the overhead on the sequential search. However, another fundamental inefficiency of MCTD is the iterative denoising process of diffusion model, which is computationally intensive.
+            To address this, we proposed the Sparse MCTD (S-MCTD), which reduces the rollout length through trajectory coarsening, $\mathbf{x}'=[x_1, x_{H+1}, x_{2H+1}, $$\dots]$ where $H$ is the coarsening factor.
+            Similar to the parallelism degree, too much coarsening can cause the information loss, we empirically found the optimal coarsening factor $H=5$.
+            Interestingly, this coarsening process is not just improving the efficiency on denoising, but also reducing the search space by reducing the number of subplans as:
+            $$
+            C_{\text{S-MCTD}} = \mathcal{O}\left(N_{\text{child}}^{S/H} \cdot C_{\text{coarse}}\right),
+            $$
+            where $C_{\text{coarse}}$ is the denoising cost of the coarse trajectory.
+            We observe that computational efficiency improves exponentially with the interval size $H$.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End Fast-MCTD -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+<!-- Experiment results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate the performance of Fast-MCTD on a variety of tasks, including long-horizon maze, robot arm manipulation, and partially observable & visual long-horizon maze tasks.
+            While MCTD shows better performance than other baselines, the required time to generate plans from MCTD is generally much longer than other baselines.
+            On the other hand, Fast-MCTD shows comparable performances to MCTD while achieving huge speedups.
+            For instance, for PointMaze and AntMaze Giant tasks, Fast-MCTD achieves 100x and 80x speedup over MCTD while maintaining the similar performance.
+            <br>
+            <br>
+            Especially, on Visual Maze large tasks, Fast-MCTD outperforms MCTD through the higher-level planning by improving the long-term planning generation quality.
+            <br>
+            <br>
+            <img src="static/images/maze-results.png" alt="Experiment Results" style="width: 100%; height: auto;">
+            <br>
+            <img src="static/images/cube-results.png" alt="Experiment Results" style="width: 100%; height: auto;">
+            <br>
+            <img src="static/images/vmaze-results.png" alt="Experiment Results" style="width: 100%; height: auto;">
+            <br>
+          </p>
+        </div>
+        <h3 class="title is-4">Ablation Study</h3>
+        <div class="content has-text-justified">
+          <p>
+            We conducted an ablation study to understand the contribution of each component of Fast-MCTD.
+            <br>
+            <br>
+            <figure style="text-align: center;">
+              <img src="static/images/ras_ablation.png" alt="Ablation Study" style="width: 100%; height: auto;">
+              <figcaption style="margin-top: 8px; font-size: 1em; color: #555;">Ablation Study on Redundancy-Aware Selection</figcaption>
+            </figure>
+            The redundancy awareness (sequential selection) ablation study is shown in Table 5, we can see that the redundancy awareness is important to improve the efficiency on the long-horizon planning tasks.
+            For the hyperparameter $w$ on our modified node selection policy, we found that if $w$ is not $0$ (considering the other concurrent rollouts), it's effect on the model performance is not significant. 
+            <br>
+            <br>
+            <figure style="text-align: center;">
+              <img src="static/images/parallelism_jump_ablation.png" alt="Ablation Study" style="width: 100%; height: auto;">
+              <figcaption style="margin-top: 8px; font-size: 1em; color: #555;">Ablation Study on Parallelism Degree and Higher-Level Interval</figcaption>
+            </figure>
+            We took another ablation studies on the parallelism degree and higher-level abstraction interval.
+            For parallelism degree, we found that the efficiency is dramatically improved when it is increased from $1$.
+            When it is very high (e.g., 200), the performance is slightly degraded, but it is not significant, which means the overhead on searching from the old tree statistics is minor compared to the benefit from the parallelism.
+            For the higher-level abstraction interval, we found the performance is drastically decreased when the interval is too large (e.g., 30), while the efficiency is saturated at 10.
+            It is because the information loss of the coarse trajectory is too large to generate the good subplans.
+          </p>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+<!-- End Experiment results -->
 
+<!-- paper conclusion -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduced Fast Monte Carlo Tree Diffusion (Fast-MCTD), a scalable diffusion-based planning algorithm that resolves the planning horizon dilemma inherent to MCTD. By combining parallelized tree search (P-MCTD) with sparse sub-trajectory abstraction (S-MCTD), Fast-MCTD achieves significant inference-time speedups—up to 100× faster than MCTD in some tasks, while maintaining or exceeding performance across challenging long-horizon tasks. We demonstrated its effectiveness in maze navigation, robotic manipulation, and visual planning benchmarks. These gains are enabled by algorithmic innovations such as search-aware parallel rollouts and coarse-to-fine diffusion over abstract plans. While Fast-MCTD alleviates core efficiency bottlenecks, further improvements may be possible by integrating adaptive sparsity or learning-based guidance selection. Our findings highlight that structured reasoning from test-time scalability and efficient inference process are not mutually exclusive, opening new avenues for fast, deliberative decision-making in high-dimensional domains.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper conclusion -->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @article{f-mctd,
+          title={Fast Monte Carlo Tree Diffusion: 100x Speedup via Parallel Sparse Planning},
+          author={Yoon, Jaesik* and Cho, Hyeonseo* and Bengio, Yoshua and Ahn, Sungjin},
+          journal={arXiv preprint arXiv:2506.09498},
+          year={2025}
+        }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -291,7 +390,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
