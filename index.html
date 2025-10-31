@@ -241,6 +241,7 @@
             where $\pi(i)$ denotes the node selection policy from node $i$, $\mathcal{C}(i)$ is the child node set, and $V_{i}$, $N_{i}$ represent estimated value and visitation count respectively. The hyperparameter $w$ balances exploration-exploitation for parallel search: $w=0$ reduces to standard MCTD selection, while higher values penalize already-selected nodes in the current batch, encouraging exploration of different tree regions.
             Additionally, we designed to process the selection sequentially to reduce the possibility of the duplicate rollout.
             <strong>Parallel Denoising on Expansion and Simulation</strong> optimizes computational overhead. Unlike standard MCTS, MCTD incurs substantial expansion overhead due to denoising processes. We parallelize denoising by batching rollouts—since subplan lengths vary across rollouts, subplans are zero-padded and packed into single batches, enabling high-throughput parallel GPU execution. The table below shows operation times for each MCTD step on PointMaze Giant tasks.
+            <img src="static/images/step_time_table.png" alt="MCTD Time" style="width: 40%; height: auto;">
             <div style="width: 100%; display: flex; justify-content: center; margin: 1em 0;">
               <table style="border-collapse: collapse; min-width: 320px; max-width: 400px; font-size: 1.1em;">
                 <thead>
