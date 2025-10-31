@@ -241,12 +241,33 @@
             where $\pi(i)$ denotes the node selection policy from node $i$, $\mathcal{C}(i)$ is the child node set, and $V_{i}$, $N_{i}$ represent estimated value and visitation count respectively. The hyperparameter $w$ balances exploration-exploitation for parallel search: $w=0$ reduces to standard MCTD selection, while higher values penalize already-selected nodes in the current batch, encouraging exploration of different tree regions.
             Additionally, we designed to process the selection sequentially to reduce the possibility of the duplicate rollout.
             <strong>Parallel Denoising on Expansion and Simulation</strong> optimizes computational overhead. Unlike standard MCTS, MCTD incurs substantial expansion overhead due to denoising processes. We parallelize denoising by batching rollouts—since subplan lengths vary across rollouts, subplans are zero-padded and packed into single batches, enabling high-throughput parallel GPU execution. The table below shows operation times for each MCTD step on PointMaze Giant tasks.
-            <br>
-            <br>
-            <br>
-            <div class="has-text-centered">
-              <img src="static/images/step_time_table.png" alt="MCTD Time" style="width: 40%; height: auto;">
-                <br>
+            <div style="width: 100%; display: flex; justify-content: center; margin: 1em 0;">
+              <table style="border-collapse: collapse; min-width: 320px; max-width: 400px; font-size: 1.1em;">
+                <thead>
+                  <tr>
+                    <th style="border-bottom: 2px solid #222; border-top: 2px solid #222; text-align: left; padding: 6px 12px;">MCTD Step</th>
+                    <th style="border-bottom: 2px solid #222; border-top: 2px solid #222; text-align: left; padding: 6px 12px;">Time (sec.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Selection</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">3e-4 (0.05%)</td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Expansion</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;"><strong>0.393 (70.9%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;">Simulation</td>
+                    <td style="border-bottom: 1px solid #222; padding: 6px 12px;"><strong>0.161 (29.0%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: 2px solid #222; padding: 6px 12px;">Backpropagation</td>
+                    <td style="border-bottom: 2px solid #222; padding: 6px 12px;">1e-4 (0.02%)</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </p>
           <br>
