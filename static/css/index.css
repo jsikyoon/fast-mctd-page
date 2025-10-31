@@ -135,3 +135,34 @@ body {
 
 
 
+
+/* Responsive MathJax rendering: prevent overflow and scale on small screens */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+@media (max-width: 768px) {
+  mjx-container[jax="CHTML"] {
+    font-size: 0.95em;
+  }
+  mjx-container[jax="CHTML"][display="true"] {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  mjx-container[jax="CHTML"] {
+    font-size: 0.9em;
+  }
+  mjx-container[jax="CHTML"][display="true"] {
+    font-size: 0.85em;
+  }
+}
