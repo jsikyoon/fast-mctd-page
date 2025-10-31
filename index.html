@@ -242,6 +242,8 @@
             Additionally, we designed to process the selection sequentially to reduce the possibility of the duplicate rollout.
             <strong>Parallel Denoising on Expansion and Simulation</strong> optimizes computational overhead. Unlike standard MCTS, MCTD incurs substantial expansion overhead due to denoising processes. We parallelize denoising by batching rollouts—since subplan lengths vary across rollouts, subplans are zero-padded and packed into single batches, enabling high-throughput parallel GPU execution. The table below shows operation times for each MCTD step on PointMaze Giant tasks.
             <br>
+            <br>
+            <br>
             <div class="has-text-centered">
               <img src="static/images/step_time_table.png" alt="MCTD Time" style="width: 40%; height: auto;">
                 <br>
