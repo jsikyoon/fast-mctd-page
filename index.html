@@ -235,16 +235,18 @@
             To design a parallelized version of MCTD, we apply three techniques: Delayed Tree Update, Redundancy-Aware Selection, and Parallel Denoising on Expansion and Simulation.
             <strong>Delayed Tree Update</strong> postpones tree updates until $K$ rollouts complete, enabling parallel processing of multiple rollouts. While this causes inefficiency from operating on outdated tree statistics, we empirically find this overhead negligible compared to denoising costs. However, delayed updates alone are insufficient for efficient parallelization due to potential duplicate rollouts.
             <strong>Redundancy-Aware Selection</strong> addresses duplicate rollouts by redesigning the node selection policy to account for concurrent rollouts, inspired by <a href="https://arxiv.org/abs/1810.11755" target="_blank" style="color: #00A1D6; text-decoration: none;">Liu et al., 2018</a> and <a href="https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf" target="_blank" style="color: #00A1D6; text-decoration: none;">Chaslot et al., 2008</a>:
+            $$
+              \arg\max_{j\in\mathcal{C}(i)}\left(V_j + \beta \sqrt{ \frac{\log (N_i + \hat{N}_i \cdot w)}{N_j + \hat{N}_j \cdot w}}\right),
+            $$
             <!--$$
               \pi(i) = \arg\max_{j\in\mathcal{C}(i)}\left(V_j + \beta \sqrt{ \frac{\log (N_i + \hat{N}_i \cdot w)}{N_j + \hat{N}_j \cdot w}}\right),
-            $$
-            -->
-            $$
+            $$-->
+            <!--$$
             \begin{aligned}
             \pi(i) = \arg\max_{j\in\mathcal{C}(i)} \bigg( & V_j + \\
             & \beta \sqrt{ \frac{\log (N_i + \hat{N}_i \cdot w)}{N_j + \hat{N}_j \cdot w}} \bigg),
             \end{aligned}
-            $$
+            $$-->
             where $\pi(i)$ denotes the node selection policy from node $i$, $\mathcal{C}(i)$ is the child node set, and $V_{i}$, $N_{i}$ represent estimated value and visitation count respectively. The hyperparameter $w$ balances exploration-exploitation for parallel search: $w=0$ reduces to standard MCTD selection, while higher values penalize already-selected nodes in the current batch, encouraging exploration of different tree regions.
             Additionally, we designed to process the selection sequentially to reduce the possibility of the duplicate rollout.
             <strong>Parallel Denoising on Expansion and Simulation</strong> optimizes computational overhead. Unlike standard MCTS, MCTD incurs substantial expansion overhead due to denoising processes. We parallelize denoising by batching rollouts—since subplan lengths vary across rollouts, subplans are zero-padded and packed into single batches, enabling high-throughput parallel GPU execution. The table below shows operation times for each MCTD step on PointMaze Giant tasks.
